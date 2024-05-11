@@ -19,9 +19,13 @@ import PageNotFound from "./PageNotFound.jsx";
 import Layout from "./layout.jsx";
 import "./index.css"
 
-const router = createBrowserRouter([
-    { path: "*", element: <Root/> },
-]);
+const router = createBrowserRouter(
+    [
+        { path: "*", element: <Root/> },
+    ], {
+        basename: "/Terranova"
+    }
+);
 
 export default function App() {
     return (<RouterProvider router={router}/>)
