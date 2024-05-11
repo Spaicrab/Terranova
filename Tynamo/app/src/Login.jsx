@@ -1,40 +1,49 @@
 import React from 'react'
-import { useState, useEffect } from "react";
-import ReactDOM from 'react-dom/client'
-import showIcon from './assets/show-img.png'
-import hideIcon from './assets/hide-img.png'
-import Navbar from './components/Navbar.jsx'
-import Login from './api/Login.jsx'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import LoginAPI from './api/Login.jsx'
+import './Form.css'
 import './Login.css'
 
-function PageContent() {
+export default function Login() {
+  const navigate = useNavigate();
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
-  useEffect(() => {
-    let occhioIconaPassword = document.getElementById("occhioIconaPassword");
-    let password = document.getElementById("password");
-    occhioIconaPassword.onclick = function() {
-      if (password.type == "password") {
-          password.type = "text";
-          setIsPasswordHidden(false);
-      } else {
-          password.type = "password";
-          setIsPasswordHidden(true);
-      }
+  const [APIRequest, setAPIRequest] = useState({
+    email: "",
+    password: ""
+  });
+
+  const submitRequest = async () => {
+    const requestResult = await LoginAPI(APIRequest);
+    if (requestResult) {
+      navigate('/area-personale/informazioni-personali')
     }
-  }, []);
+  };
+
+  const handleChange = (e, key) => {
+    setAPIRequest({...APIRequest, [key]: e.target.value})
+  };
 
   return (
-    <>
+    <div className="page-Login">
+      <Helmet>
+        <title>Tynamo - Login</title>
+        <body className="body-Form"/>
+      </Helmet>
+
       <div className="wrapper">
-        <form onSubmit={e => {e.preventDefault(); Login();}}>
+        <form onSubmit={e => {e.preventDefault(); submitRequest();}}>
           <h1>Login</h1>
 
           <div className="input-box">
-            <input type="text" placeholder="Email" id="email" required/>
-          </div>
+              <input type="text" placeholder="Email" value={APIRequest.email} onChange={(e) => handleChange(e, "email")} required/>
+            </div>
           <div className="input-box">
-            <input type="password" placeholder="Password" id="password" required/>
-            <img src={isPasswordHidden ? showIcon : hideIcon} id="occhioIconaPassword"/>
+            <input type={isPasswordHidden ? "password" : "text"} placeholder="Password" className="password"
+              value={APIRequest.password} onChange={(e) => handleChange(e, "password")} required/>
+            <i className={isPasswordHidden ? "bx bx-fw bxs-show" : "bx bx-fw bxs-hide"}
+              onClick={() => setIsPasswordHidden(isPasswordHidden => !isPasswordHidden)}/>
           </div>
           { /*
             <div className="remember-forgot">
@@ -44,17 +53,10 @@ function PageContent() {
           */}
           <button type="submit" className="btn">Login</button>
           <div className="register-link">
-            <p>Non hai un contratto Tynamo? <a href="./register.html"> Registrati subito.</a></p>
+            <p>Non hai un contratto Tynamo? <Link to="/register">Registrati subito.</Link></p>
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Navbar/>
-    <PageContent/>
-  </React.StrictMode>,
-)

@@ -1,0 +1,32 @@
+@import 'normalize.css';
+
+.root-Desktop .page-CreazioneOfferta .wrapper {
+  right: 15%;
+  top: 20%;
+  position: absolute;
+}
+
+.page-CreazioneOfferta .labelPagamento {
+  font-size: 20px;
+  font-family: Epilogue;
+  margin-top: 20px;
+}
+
+.page-CreazioneOfferta .tipoPagamento {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius : 10px;
+}
+
+.page-CreazioneOfferta #wrapperPagamento {
+  text-align: center;
+}
+
+.page-CreazioneOfferta .input-box .btnData {
+  width: 220px;
+  margin-left: auto
+}

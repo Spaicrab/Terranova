@@ -1,0 +1,108 @@
+@import 'normalize.css';
+
+.body-Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: hidden;
+  background: url(./assets/bg2.png);
+  background-size: cover;
+  background-position: right top;
+  background-repeat: repeat-x;
+}
+
+.root-Desktop .page-Home .cropped-bg {
+  position: absolute;
+  right: 315px;
+  top: 74px;
+  z-index: -2;
+  height: 1006px;
+}
+.root-Mobile .page-Home .cropped-bg {
+  display: none;
+}
+
+.root-Desktop .page-Home .separatore {
+  width: 59px;
+  height: 1100px;
+  transform: rotate(-18deg);
+  position: absolute;
+  right: 944px;
+  top: 35px;
+  background: #ffffff;
+  z-index: -1;
+}
+
+.page-Home .titolo {
+  position: absolute;
+  color: #FFF;
+  font-family: Epilogue;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.root-Desktop .page-Home .titolo {
+  top: 15%;
+  right: 485px;
+  font-size: 2.8em;
+  text-align: center;
+}
+.root-Mobile .page-Home .titolo {
+  top: 18%;
+  left: 3%;
+  font-size: 9vw;
+}
+
+.page-Home .titolo h1 {
+  position: absolute;
+  left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.root-Desktop .page-Home .titolo h1 {
+  top: 25px;
+  font-size: 3.8em;
+}
+.root-Mobile .page-Home .titolo h1 {
+  top: 55%;
+  font-size: 2.6em;
+}
+
+.page-Home .evidenziatore {
+  width: 100%;
+  background: rgba(38, 86, 255, 0.60);
+}
+.root-Desktop .page-Home .evidenziatore {
+  height: 199px;
+  position: absolute;
+  right: 0px;
+  top: 49%;
+  z-index: -3;
+}
+.root-Mobile .page-Home .evidenziatore {
+  padding: 20px;
+}
+
+.page-Home .descrizione {
+  color: #FFF;
+  text-align: center;
+  font-family: Epilogue;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.root-Desktop .page-Home .descrizione {
+  display: flex;
+  width: 740px;
+  height: 78px;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  right: 174px;
+  top: 57px;
+  font-size: 2em;
+}
+.root-Mobile .page-Home .descrizione {
+  font-size: 1.6em;
+}
