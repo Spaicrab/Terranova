@@ -12,15 +12,17 @@
   background-repeat: repeat-x;
 }
 
+.root-Mobile .page-Home {
+  display: flex;
+  justify-content: center;
+}
+
 .root-Desktop .page-Home .cropped-bg {
   position: absolute;
   right: 315px;
   top: 74px;
   z-index: -2;
   height: 1006px;
-}
-.root-Mobile .page-Home .cropped-bg {
-  display: none;
 }
 
 .root-Desktop .page-Home .separatore {
@@ -34,6 +36,11 @@
   z-index: -1;
 }
 
+.root-Mobile .page-Home .cropped-bg,
+.root-Mobile .page-Home .separatore {
+  display: none;
+}
+
 .page-Home .titolo {
   position: absolute;
   color: #FFF;
@@ -44,29 +51,29 @@
 }
 .root-Desktop .page-Home .titolo {
   top: 15%;
-  right: 485px;
+  right: 510px;
   font-size: 2.8em;
   text-align: center;
 }
 .root-Mobile .page-Home .titolo {
   top: 18%;
-  left: 3%;
-  font-size: 9vw;
+  font-size: calc(1em + 4vw);
 }
 
 .page-Home .titolo h1 {
-  position: absolute;
-  left: 15px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 .root-Desktop .page-Home .titolo h1 {
+  position: absolute;
   top: 25px;
+  left: 15px;
   font-size: 3.8em;
 }
 .root-Mobile .page-Home .titolo h1 {
-  top: 55%;
-  font-size: 2.6em;
+  margin-left: 15px;
+  margin-top: -5%;
+  font-size: 2.4em;
 }
 
 .page-Home .evidenziatore {
@@ -81,6 +88,8 @@
   z-index: -3;
 }
 .root-Mobile .page-Home .evidenziatore {
+  position: relative;
+  margin-top: 37%;
   padding: 20px;
 }
 
@@ -99,10 +108,10 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  right: 174px;
+  right: 147px;
   top: 57px;
   font-size: 2em;
 }
 .root-Mobile .page-Home .descrizione {
-  font-size: 1.6em;
+  font-size: calc(1.2em + 1vw);
 }
