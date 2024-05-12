@@ -41,7 +41,7 @@ export default function NavbarAreaPersonale({windowWidth}) {
     <div className="component-NavbarPersonale">
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
       <nav>
-        <Link to="/" className="logoHome">
+        <Link to="/" onClick={() => (setShowMenu(false))} className="logoHome">
           <img src={LOGO} className="logoHomeImage" alt="LOGO"/>
         </Link>
         <ul>
