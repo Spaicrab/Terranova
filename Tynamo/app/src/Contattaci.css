@@ -2,22 +2,23 @@
 
 .page-Contattaci .riquadro {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
   position: absolute;
   top: 27%;
-  height: 50%;
+  width: 40%;
+  margin-left: -20%;
   border-radius: 27px;
   background: rgba(171, 220, 255, 0.80);
   text-align: center;
   word-wrap: break-word;
+  height: 60%;
   overflow-y: auto;
 }
 .root-Mobile .page-Contattaci .riquadro {
   position: relative;
   padding: 20px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
   width: 80%;
   margin-top: 20px;
   margin-left: auto;
@@ -25,17 +26,16 @@
   justify-content: center;
 }
 
-.root-Desktop .page-Contattaci #r1 {
-  width: 25%;
-  left: 5%;
+.page-Contattaci .riquadro .contenuto {
+  float: left;
 }
-.root-Desktop .page-Contattaci #r2 {
-  left: 35%;
-  right: 35%;
+
+.page-Contattaci .riquadro .separatore {
+  width: 5vw;
 }
-.root-Desktop .page-Contattaci #r3 {
-  width: 25%;
-  right: 5%;
+
+.page-Contattaci .riquadro h3, h1 {
+  text-align: left;
 }
 
 .page-Contattaci .riquadro i {
@@ -43,10 +43,6 @@
 }
 .root-Mobile .page-Contattaci .riquadro i {
   margin-top: 3%;
-}
-
-.page-Contattaci #r2 i {
-  margin-top: 5%;
 }
 
 .page-Contattaci .riquadro p {
@@ -58,20 +54,8 @@
   font-size: calc(0.9em + 0.9vmax);
 }
 
-.root-Desktop .page-Contattaci .contenutoRiquadro br {
-  margin-top: 10%;
-}
-
-.root-Desktop .page-Contattaci .contenutoRiquadro {
-  margin-bottom: 15%;
-}
-
-.page-Contattaci #r2 .contenutoRiquadro {
-  width: 90%;
-  height: 90%;
-}
-.root-Mobile .page-Contattaci #r2 .contenutoRiquadro {
-  width: 100%;
+.root-Desktop .page-Contattaci .riquadro br {
+  margin-top: 5px;
 }
 
 .page-Contattaci .mappa {
@@ -79,7 +63,6 @@
   border-radius: 27px;
   width: 100%;
   height: 72%;
-  margin-top: -6%;
 }
 .root-Mobile .page-Contattaci .mappa {
   margin-top: -3%;
