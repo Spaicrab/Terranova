@@ -23,28 +23,43 @@ export default function Contattaci() {
       </Helmet>
 
       <div className="riquadro">
-        <div>
+        <div className="contatti">
           <h1>Contattaci</h1>
           <div className="contenuto">
-            <i className='bx bxs-home-alt-2'/>
-            <h3>+39 02 12345678</h3>
-            <br/>
-            <i className='bx bx-devices'/>
-            <h3>+39 347 9876543</h3>
+            <i className='bx bx-code-alt'/>
+            <div>
+              <h3>Lead Developer</h3>
+              <p>Giulio De Felice</p>
+            </div>
           </div>
           <br/>
           <div className="contenuto">
-            <i className='bx bxs-envelope'/>
-            <h3>tynamo@assistenza.com</h3>
-            <br/>
-            <i className='bx bxs-info-circle'/>
-            <h3>tynamo@info.com</h3>
+            <i className='bx bxs-palette'/>
+            <div>
+              <h3>UI Developer</h3>
+              <p>Giuseppe Russo</p>
+            </div>
+          </div>
+          <br/>
+          <div className="contenuto">
+            <i className='bx bxs-wrench'/>
+            <div>
+              <h3>Technician</h3>
+              <p>Mattia Cremasco</p>
+            </div>
+          </div>
+          <br/>
+          <div className="contenuto">
+            <i className='bx bxs-user-rectangle'></i>
+            <div>
+              <h3>Project Manager</h3>
+              <p>Riccardo Lovato</p>
+            </div>
           </div>
         </div>
-        <div className="separatore"/>
-        <div>
-          <i className='bx bxs-map'/>
+        <div className="divMappa">
           {(clientCountry == "Italy") ? <>
+            <i className='bx bxs-map'/>
             <h2>Verona, Italy</h2>
             <br/>
             <iframe className="mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0660318602972!2d10.9692262766284!3d45.42817023584146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5f61f8852227%3A0xfab7331910c8e071!2sITIS%20Guglielmo%20Marconi!5e0!3m2!1sit!2sit!4v1714310186579!5m2!1sit!2sit" 
@@ -52,9 +67,10 @@ export default function Contattaci() {
               referrerPolicy="no-referrer-when-downgrade">
             </iframe>
           </> : (!(clientCountry == "") ? <>
-              <p>Italy</p>
+              <i className='bx bxs-map'/>
+              <h2>Italy</h2>
               <br/>
-              <h1>Cannot load resource</h1>
+              <h1 style={{"textAlign": "center"}}>Cannot load resource</h1>
             </> : <></>
           )}
         </div>
