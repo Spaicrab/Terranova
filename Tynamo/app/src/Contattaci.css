@@ -5,25 +5,31 @@
   padding: 20px;
   padding-bottom: 25px;
   position: relative;
-  width: 120%;
-  margin-left: -10%;
+  width: 800px;
+  height: 500px;
+  margin-top: 74px;
   border-radius: 27px;
   background: rgba(171, 220, 255, 0.80);
   text-align: center;
   word-wrap: break-word;
-  overflow-y: auto;
 }
 .root-Mobile .page-Contattaci .riquadro {
-  padding: 20px;
-  padding-bottom: 30px;
-  width: 80%;
-  margin-top: 20px;
+  flex-direction: column;
+  position: absolute;
+  top: 2%;
+  height: 737px;
+  width: 90%;
+  max-width: 370px;
+  min-width: 280px;
+  left: 0; 
+  right: 0; 
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
+  padding-bottom: 120px;
+  overflow-y: hidden;
 }
 
-.page-Contattaci .riquadro .contatti {
+.root-Desktop .page-Contattaci .riquadro .contatti {
   width: 315px;
 }
 
@@ -60,15 +66,15 @@
 .page-Contattaci .riquadro i {
   font-size: 1.7em;
 }
-.root-Mobile .page-Contattaci .riquadro i {
-  margin-top: 3%;
-}
 
-.page-Contattaci .riquadro .divMappa {
+.root-Desktop .page-Contattaci .riquadro .divMappa {
   flex-grow: 100;
   margin-left: 4%;
   margin-right: 1%;
   width: 300px;
+}
+.root-Mobile .page-Contattaci .riquadro .divMappa {
+  margin-top: 15px;
 }
 
 .page-Contattaci .mappa {
@@ -78,10 +84,32 @@
   height: 79%;
 }
 
-/* Scrollbar */
-  .page-Contattaci ::-webkit-scrollbar {
-    width: 10px;
-  }
-  .page-Contattaci ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-  }
+.page-Contattaci .repositoryLink {
+  position: absolute;
+  bottom: 30px;
+  color: black;
+  border-width: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-Contattaci .repositoryLink i {
+  font-size: 16px;
+  position: absolute;
+  right: -18px;
+  top: -2px;
+}
+
+.page-Contattaci .repositoryLink p:hover,
+.page-Contattaci .repositoryLink i:hover {
+  text-decoration: underline;
+}
+
+.page-Contattaci .noResource {
+  width: 100%;
+}
+
+.page-Contattaci .noResource h1 {
+  text-align: center;
+  width: 100%;
+}
