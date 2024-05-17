@@ -18,19 +18,19 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class TynamoApplication {
 
     public static void main(String[] args) {
-        Main.main(args);
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        
-        List<Anagrafica> listaAnagrafiche = DaoManager.getDaoAnagrafica().getAll();
-        for (Anagrafica anagrafica : listaAnagrafiche) {
-            Account account = Account.builder()
-                    .email(anagrafica.getEmail())
-                    .password(passwordEncoder.encode(anagrafica.getEmail()))
-                    .anagrafica(anagrafica)
-                    .build();
-            DaoManager.getDaoAccount().insert(account);
+        if (DaoManager.getDaoAccount().getAll().isEmpty()) {
+            Main.main(args);
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            List<Anagrafica> listaAnagrafiche = DaoManager.getDaoAnagrafica().getAll();
+            for (Anagrafica anagrafica : listaAnagrafiche) {
+                Account account = Account.builder()
+                        .email(anagrafica.getEmail())
+                        .password(passwordEncoder.encode(anagrafica.getEmail()))
+                        .anagrafica(anagrafica)
+                        .build();
+                DaoManager.getDaoAccount().insert(account);
+            }
         }
-        
         SpringApplication.run(TynamoApplication.class, args);
     }
         

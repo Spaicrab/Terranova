@@ -3,9 +3,9 @@ package com.grape.tynamoApp.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
+import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class JwtService {
-    private static final String SECRET_KEY = "qi+Et/TK2Ls84b6aqN6fHmvf9dyZe500l0wrOfevjOM+3gtIrEKBgIiXFqgxYBUc";
+    private static final SecretKey SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private static final long EXPIRATION_TIME = 15*60*1000; //timeout token -> 15'
     
     public String extractUsername(String token) {
@@ -59,7 +59,7 @@ public class JwtService {
     }
 
     private Key getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = SECRET_KEY.getEncoded();
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

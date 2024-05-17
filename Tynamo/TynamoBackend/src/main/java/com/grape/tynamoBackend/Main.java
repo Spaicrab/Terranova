@@ -23,6 +23,9 @@ public class Main {
 
     public static void main(String[] args) {
         try {
+            if (!DaoManager.getDaoAnagrafica().getAll().isEmpty()) {
+                return;
+            }
             CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
             String[] celle;
             
