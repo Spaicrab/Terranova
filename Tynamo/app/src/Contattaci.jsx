@@ -51,6 +51,7 @@ function PageContent() {
         <div>
           <h3>Lead Developer</h3>
           <p>Giulio De Felice</p>
+          <p className="email">giuliodf2005@gmail.com</p>
         </div>
       </div>
       <br/>
@@ -59,6 +60,7 @@ function PageContent() {
         <div>
           <h3>UI Developer</h3>
           <p>Giuseppe Russo</p>
+          <p className="email">giuseppe.russo.c2019@gmail.com</p>
         </div>
       </div>
       <br/>
@@ -75,6 +77,7 @@ function PageContent() {
         <div>
           <h3>Project Manager</h3>
           <p>Riccardo Lovato</p>
+          <p className="email">riccardo.lovato05@icloud.com</p>
         </div>
       </div>
     </div>
