@@ -16,6 +16,8 @@
   padding: 20px;
   padding-bottom: 5%;
   width: 80%;
+  max-width: 450px;
+  min-width: 250px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
